@@ -311,6 +311,47 @@
         }
 
         @media (max-width: 500px) {
+            /* Mantém a estrutura de desktop ativa */
+                body {
+                        height: 100vh;
+                                overflow: hidden;
+                                    }
+                                        
+                                            .top-bar {
+                                                    display: flex; /* Garante que a barra do topo continue aparecendo */
+                                                            font-size: 11px; /* Diminui um pouco a letra para não quebrar */
+                                                                    padding: 0 10px;
+                                                                        }
+                                                                        
+                                                                            .top-bar-left, .top-bar-right {
+                                                                                    gap: 10px;
+                                                                                        }
+                                                                                        
+                                                                                            /* Reduz o espaçamento interno para a janela respirar */
+                                                                                                .desktop-area {
+                                                                                                        padding: 10px;
+                                                                                                            }
+                                                                                                            
+                                                                                                                /* Diminui o zoom/escala de tudo dentro da janela para caber perfeitamente */
+                                                                                                                    .window {
+                                                                                                                            transform: scale(0.85); 
+                                                                                                                                    transform-origin: center center;
+                                                                                                                                            max-width: 100%;
+                                                                                                                                                }
+                                                                                                                                                
+                                                                                                                                                    .window-body {
+                                                                                                                                                            padding: 24px 16px; /* Diminui os paddings internos */
+                                                                                                                                                                }
+                                                                                                                                                                }
+                                                                                                                                                                
+                                                                                                                                                                /* Ajuste extra para celulares muito pequenos (ex: iPhone SE) */
+                                                                                                                                                                @media (max-width: 380px) {
+                                                                                                                                                                    .window {
+                                                                                                                                                                            transform: scale(0.75);
+                                                                                                                                                                                }
+                                                                                                                                                                                }
+                                                                                                                                                                                
+
             .window {
                 height: 100%;
                 border-radius: 0;
